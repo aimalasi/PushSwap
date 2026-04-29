@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:56:41 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/03/24 16:07:33 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/04/24 16:58:07 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	rotate(t_stack *s, char *name)
 	}
 	s->arr[0] = tmp;
 	write(1, name, ft_strlen(name));
-	write(1, "\n,", 1);
+	write(1, "\n", 1);
 }
 
 void	reverse_rotate(t_stack *s, char *name)
@@ -79,5 +79,17 @@ void	reverse_rotate(t_stack *s, char *name)
 }
 s->arr[s->top] = tmp;
 write(1, name, ft_strlen(name));
-write(1, "\n,", 1);
+write(1, "\n", 1);
+}
+
+void	ft_strncpy(char *dst, const char *src, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dst[i] = src[i];
+		i++;
+	}
 }
