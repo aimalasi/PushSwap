@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:35:05 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/04/24 18:34:42 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/05/05 19:48:36 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_two(t_stack *a)
 		swap(a, "sa");
 }
 
-t_stack *init_stack(int size)
+t_stack	*init_stack(int size)
 {
-	t_stack *s;
+	t_stack	*s;
 
 	s = malloc(sizeof(t_stack));
 	if (!s)
@@ -36,7 +36,7 @@ t_stack *init_stack(int size)
 	return (s);
 }
 
-void    free_stack(t_stack *s)
+void	free_stack(t_stack *s)
 {
 	if (!s)
 		return ;
@@ -44,7 +44,7 @@ void    free_stack(t_stack *s)
 	free(s);
 }
 
-void    error_exit(t_stack *a, t_stack *b)
+void	error_exit(t_stack *a, t_stack *b)
 {
 	free_stack(a);
 	free_stack(b);
@@ -72,55 +72,4 @@ int	is_valid_int(char *s)
 	if (n > INT_MAX || n < INT_MIN)
 		return (0);
 	return (1);
-}
-
-int	has_duplicates(t_stack *a, int size)
-{
-	int i;
-	int	j;
-	
-	if (size == 1)
-		return (0);
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (a->arr[i] == a->arr[j])
-				return (1);
-			j++;
-		}
-		i++;
-		if (i == size - 1)
-		 break ;
-	}
-	return (0);
-}
-
-int is_sorted(t_stack *a)
-{
-	int i;
-
-	i = 0;
-	while (i < a->top)
-	{
-		if (a->arr[i] < a->arr[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void	free_split(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
 }

@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 16:59:47 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/04/24 18:34:25 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/05/05 19:43:22 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ typedef struct s_stack
 	int	*arr;
 	int	top;
 	int	size;
-} 	t_stack;
+}	t_stack;
 
-t_stack *init_stack(int size);
+t_stack	*init_stack(int size);
 void	push(t_stack *dst, t_stack *src, char *name);
 void	swap(t_stack *s, char *name);
 void	rotate(t_stack *s, char *name);

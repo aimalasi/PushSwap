@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:34:57 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/04/24 18:43:13 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/05/05 19:42:03 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	*get_word(char *s, int *i)
 	return (word);
 }
 
-static char **split_string(char *s, int count)
+static char	**split_string(char *s, int count)
 {
 	char	**result;
 	int		i;
@@ -103,8 +103,8 @@ static void	load_stack(t_stack *a, t_stack *b, char **args, int size)
 
 int	main(int argc, char **argv)
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 	int		size;
 	char	**args;
 
@@ -143,12 +143,12 @@ int	main(int argc, char **argv)
 		sort_two(a);
 	else if (size == 3)
 		sort_three(a);
-	else if (size <=5)
+	else if (size <= 5)
 		sort_five(a, b);
 	else
 	{
 		normalize(a, size);
 		radix_sort(a, b, size);
 	}
-	return (free_stack(a), free_stack(b), 0);	
+	return (free_stack(a), free_stack(b), 0);
 }

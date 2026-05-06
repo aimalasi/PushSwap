@@ -6,18 +6,18 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:18:28 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/03/24 15:58:29 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/05/05 19:46:04 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    normalize(t_stack *a, int size)
+void	normalize(t_stack *a, int size)
 {
-	int *sorted;
+	int	*sorted;
 	int	*tmp;
 	int	i;
-	int j;
+	int	j;
 
 	sorted = malloc(sizeof(int) * size);
 	tmp = malloc(sizeof(int) * size);

@@ -6,7 +6,7 @@
 #    By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/21 18:45:34 by aimalasi          #+#    #+#              #
-#    Updated: 2026/04/24 17:37:40 by aimalasi         ###   ########.fr        #
+#    Updated: 2026/05/05 19:31:48 by aimalasi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ SRC		= ./push_swap.c		\
 		  ./operations.c	\
 		  ./radix.c			\
 		  ./small_sort.c	\
-		  ./utils.c
+		  ./utils.c			\
+		  ./more_utils.c	\
+		  ./more_operations.c\
+		  ./sort_five.c		\
 
 OBJ = $(SRC:.c=.o)
 

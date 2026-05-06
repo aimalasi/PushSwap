@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:56:41 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/04/24 16:58:07 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/05/05 19:37:43 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -25,7 +25,7 @@ static int	ft_strlen(const char *s)
 void	push(t_stack *dst, t_stack *src, char *name)
 {
 	if (src->top < 0)
-		return;
+		return ;
 	dst->arr[++(dst->top)] = src->arr[(src->top)--];
 	write(1, name, ft_strlen(name));
 	write(1, "\n", 1);
@@ -34,9 +34,9 @@ void	push(t_stack *dst, t_stack *src, char *name)
 void	swap(t_stack *s, char *name)
 {
 	int	tmp;
-	
+
 	if (s->top < 1)
-		return;
+		return ;
 	tmp = s->arr[s->top];
 	s->arr[s->top] = s->arr[s->top - 1];
 	s->arr[s->top -1] = tmp;
@@ -47,10 +47,10 @@ void	swap(t_stack *s, char *name)
 void	rotate(t_stack *s, char *name)
 {
 	int	tmp;
-	int i;
+	int	i;
 
-	if (s->top <1)
-		return;
+	if (s->top < 1)
+		return ;
 	tmp = s->arr[s->top];
 	i = s->top;
 	while (i > 0)
@@ -66,30 +66,18 @@ void	rotate(t_stack *s, char *name)
 void	reverse_rotate(t_stack *s, char *name)
 {
 	int	tmp;
-	int i;
-	
-	if (s->top <1)
-		return;
+	int	i;
+
+	if (s->top < 1)
+		return ;
 	tmp = s->arr[0];
 	i = 0;
 	while (i < s->top)
-{
-	s->arr[i] = s->arr[i + 1];
-	i++;
-}
-s->arr[s->top] = tmp;
-write(1, name, ft_strlen(name));
-write(1, "\n", 1);
-}
-
-void	ft_strncpy(char *dst, const char *src, int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < n)
 	{
-		dst[i] = src[i];
+		s->arr[i] = s->arr[i + 1];
 		i++;
 	}
+	s->arr[s->top] = tmp;
+	write(1, name, ft_strlen(name));
+	write(1, "\n", 1);
 }
