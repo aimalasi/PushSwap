@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:34:57 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/05/05 19:42:03 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/05/06 15:00:10 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,17 @@ static char	**split_string(char *s, int count)
 	}
 	result[j] = NULL;
 	return (result);
+}
+
+static char **parse_args(int argc, char **argv, int *size)
+{
+	if (argc == 2)
+	{
+		*size = count_words(argv[1]);
+		args = split_string(argv[1], *size);
+	}
+	*size = argc - 1;
+	return (argv + 1);
 }
 
 static void	load_stack(t_stack *a, t_stack *b, char **args, int size)
