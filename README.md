@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by aimalasi*
+*This project has been created as part of the 42 curriculum by aimalasi.*
 
 **Push_swap**
 
@@ -28,11 +28,13 @@ The program receives a list of integers as arguments, loads them into stack A, a
 | File | Use |
 |-----------|------------|
 | push_swap.h | # Structs and prototypes |
-| push_swap.c | # main, argument parsing, stack loading |
+| push_swap.c | # main |
 | operations.c | # push, swap, rotate, reverse_rotate |
-| radix.c | # normalize, radix_sort |
-| small_sort.c| # sort_two, sort_three, sort_five |
-| utils.c | #init_stack, free_stack, error_exit, validation|
+| radix.c | # order, normalize, radix_sort |
+| small_sort.c| #sort_three, sort_five |
+| utils1.c | #sort_two, init_stack, free_stack, error_exit, is_valid_int |
+| utils2.c | #has_duplicates, is_sorted, free_split, ft_strncpy |
+| utils3.c | #count_words, get_word, split_string, load_stack |
 | Makefile |
 
 # Instructions
@@ -40,6 +42,7 @@ The program receives a list of integers as arguments, loads them into stack A, a
 Arguments can be passed as separate values or as a single quoted string:
 
 ./push_swap 5 3 1 4 2
+
 ./push_swap "5 3 1 4 2"
 
 To count the number of operations:

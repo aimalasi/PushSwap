@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 19:15:57 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/05/05 19:46:49 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/06/25 15:43:47 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,47 @@ void	sort_three(t_stack *a)
 	bot = a->arr[a->top - 2];
 	sort_three_upper(a, top, mid, bot);
 	sort_three_lower(a, top, mid, bot);
+}
+
+static int	get_min_pos(t_stack *a)
+{
+	int	i;
+	int	min;
+	int	pos;
+
+	i = a->top;
+	min = a->arr[i];
+	pos = i;
+	while (i >= 0)
+	{
+		if (a->arr[i] < min)
+		{
+			min = a->arr[i];
+			pos = i;
+		}
+		i--;
+	}
+	return (pos);
+}
+
+void	sort_five(t_stack *a, t_stack *b)
+{
+	int	size;
+
+	size = a->top + 1;
+	while (size > 3)
+	{
+		while (a->top != get_min_pos(a))
+		{
+			if (get_min_pos(a) > a->top / 2)
+				rotate(a, "ra");
+			else
+				reverse_rotate(a, "rra");
+		}
+		push(b, a, "pb");
+		size--;
+	}
+	sort_three(a);
+	while (b->top >= 0)
+		push(a, b, "pa");
 }

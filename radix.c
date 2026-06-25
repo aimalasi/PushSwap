@@ -6,29 +6,29 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:18:28 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/05/06 14:56:01 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/06/25 17:15:46 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void bubble_sort(int *arr, int size)
+void	order(int size, int *sorted)
 {
 	int	i;
 	int	j;
-	int t;
+	int	t;
 
 	i = 0;
 	while (i < size - 1)
 	{
 		j = 0;
-		while (j < size - 1 - i)
+		while (j < size -1 - i)
 		{
-			if (arr[j] > arr[j + 1])
+			if (sorted[j] > sorted[j + 1])
 			{
-				t = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = t;
+				t = sorted[j];
+				sorted[j] = sorted[j + 1];
+				sorted[j + 1] = t;
 			}
 			j++;
 		}
@@ -52,9 +52,9 @@ void	normalize(t_stack *a, int size)
 		sorted[i] = a->arr[i];
 		i++;
 	}
-	bubble_sort(sorted, size);
+	order(size, sorted);
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 	{
 		j = 0;
 		while (sorted[j] != tmp[i])
@@ -62,27 +62,20 @@ void	normalize(t_stack *a, int size)
 		a->arr[i] = j;
 		i++;
 	}
-	free(sorted);
-	free(tmp);
-}
-
-static int	get_max_bits(int size)
-{
-	int	max_bits;
-
-	max_bits = 0;
-	while ((1 << max_bits) <= size - 1)
-		max_bits++;
-	return (max_bits);
+	(free(sorted), free(tmp));
 }
 
 void	radix_sort(t_stack *a, t_stack *b, int size)
 {
-	int bit;
-	int max_bits;
-	int i;
+	int	bit;
+	int	max_bits;
+	int	i;
+	int	max_val;
 
-	max_bits = get_max_bits(size);
+	max_val = size - 1;
+	max_bits = 0;
+	while ((1 << max_bits) <= max_val)
+		max_bits++;
 	bit = 0;
 	while (bit < max_bits)
 	{

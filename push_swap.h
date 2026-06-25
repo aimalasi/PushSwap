@@ -6,7 +6,7 @@
 /*   By: aimalasi <aimalasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 16:59:47 by aimalasi          #+#    #+#             */
-/*   Updated: 2026/05/05 19:43:22 by aimalasi         ###   ########.fr       */
+/*   Updated: 2026/06/25 16:37:54 by aimalasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,9 @@ void	sort_three(t_stack *a);
 void	sort_five(t_stack *a, t_stack *b);
 void	free_split(char **split);
 void	ft_strncpy(char *dst, const char *src, int n);
+int		count_words(char *s);
+char	*get_word(char *s, int *i);
+char	**split_string(char *s, int count);
+void	load_stack(t_stack *a, t_stack *b, char **args, int size);
 
 #endif
